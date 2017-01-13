@@ -1,0 +1,38 @@
+{
+  "name": "auth-server",
+  "version": "1.0.0",
+  "description": "Simple Auth Service",
+  "scripts": {
+    "start": "node auth-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ravi4j/auth-server.git"
+  },
+  "keywords": [
+    "Express",
+    "Node",
+    "cors",
+    "mongoose",
+    "passport"
+  ],
+
+  "author": "ravi4j - Ravi Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravi4j/auth-server/issues"
+  },
+  "homepage": "https://github.com/ravi4j/auth-server#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express-session": "^1.14.2",
+    "jade": "^1.11.0",
+    "mongoose": "^4.7.6",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
+    "serve-favicon": "^2.3.2"
+  }
+}
