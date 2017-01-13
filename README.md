@@ -1,7 +1,7 @@
 # React App Startup Guide
 ## GIT repository
 
-[https://github.com/ravi4j/rs-react-app.git]
+[https://github.com/ravi4j/auth-server.git]
 
 ```
 $
