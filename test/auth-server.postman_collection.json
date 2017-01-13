@@ -1,0 +1,53 @@
+{
+	"id": "280a35ea-0de8-a230-b365-6a61ff6c9702",
+	"name": "local-session",
+	"description": "",
+	"order": [
+		"f66f5ad4-f132-e0b8-df86-103dee70300b",
+		"68885e1d-def7-b278-ff28-1982ede0bb8d"
+	],
+	"folders": [],
+	"timestamp": 1484271325321,
+	"owner": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "68885e1d-def7-b278-ff28-1982ede0bb8d",
+			"headers": "Authorization: Basic Z3Vlc3Q6Z3Vlc3Q=\nContent-Type: application/json\nAccept: application/json\n",
+			"url": "localhost:4000/rs/api/register",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484274976985,
+			"name": "localhost:4000/rs/api/register",
+			"description": "",
+			"collectionId": "280a35ea-0de8-a230-b365-6a61ff6c9702",
+			"responses": [],
+			"rawModeData": "{\n \"username\": \"ravi\",\n \"password\": \"ravi\"\n}"
+		},
+		{
+			"id": "f66f5ad4-f132-e0b8-df86-103dee70300b",
+			"headers": "Authorization: Basic Z3Vlc3Q6Z3Vlc3Q=\nContent-Type: application/json\nAccept: application/json\n",
+			"url": "localhost:4000/rs/api/login",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1484275327507,
+			"name": "localhost:4000/rs/api/login",
+			"description": "",
+			"collectionId": "280a35ea-0de8-a230-b365-6a61ff6c9702",
+			"responses": [],
+			"rawModeData": "{\n \"username\": \"guest\",\n \"password\": \"guest\"\n}"
+		}
+	]
+}
