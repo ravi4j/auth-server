@@ -25,7 +25,7 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 // path.join(__dirname, '../public')
-app.use(favicon(path.join(__dirname,'../public/favicon.ico')));
+app.use(favicon(path.join(__dirname,'./public/favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,62 +40,16 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors(corsOptions));
 
-// routes
-
-var router = express.Router();
-
-router.get('/register', function(req, res) {
-    res.json({ });
-});
-
-router.post('/register', function(req, res) {
-    UserAccount.register(new UserAccount({ username : req.body.username }), req.body.password, function(err, account) {
-        if (err) {
-            return res.json({ account : account });
-        }
-
-        passport.authenticate('local')(req, res, function () {
-           res.json({ user : req.user });
-        });
-    });
-});
-
-router.get('/login', function(req, res) {
-    res.json({ user : req.user });
-});
-
-router.post('/login', passport.authenticate('local'), function(req, res) {
-   res.json({ user : req.user });
-});
-
-router.get('/logout', function(req, res) {
-    req.logout();
-    res.json({ user : req.user });
-});
-
-router.get('/ping', function(req, res){
-    res.status(200).send("pong!");
-});
-
+var router = require('./routes/routes');
 
 app.use('/rs/api', router);
 
 // passport config
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var passportLocalMongoose = require('passport-local-mongoose');
-
-var Account = new Schema({
-    username: String,
-    password: String
-});
-
-Account.plugin(passportLocalMongoose);
-var UserAccount = mongoose.model('Account', Account);
-passport.use(new LocalStrategy(UserAccount.authenticate()));
-passport.serializeUser(UserAccount.serializeUser());
-passport.deserializeUser(UserAccount.deserializeUser());
+var User = require('./models/user');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // mongoose
 mongoose.connect('mongodb://localhost:27017/rs-react-auth');
@@ -108,7 +62,6 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -134,14 +87,10 @@ app.use(function(err, req, res, next) {
 
 
 // Mongooes
-
-
-
 app.listen(4000, '0.0.0.0', function(err) {
     if (err) {
         console.log(err);
         return;
     }
-
     console.log('Listening at http://localhost:4000');
 });

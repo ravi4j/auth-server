@@ -16,7 +16,6 @@
     "mongoose",
     "passport"
   ],
-
   "author": "ravi4j - Ravi Sharma",
   "license": "ISC",
   "bugs": {
@@ -24,8 +23,10 @@
   },
   "homepage": "https://github.com/ravi4j/auth-server#readme",
   "dependencies": {
+    "body-parser": "^1.16.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.1",
+    "express": "^4.14.0",
     "express-session": "^1.14.2",
     "jade": "^1.11.0",
     "mongoose": "^4.7.6",
