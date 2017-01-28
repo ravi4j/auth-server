@@ -1,4 +1,5 @@
-# React App Startup Guide
+# Simple Rest API Server
+## powered by express , passport , mongodb
 ## GIT repository
 
 [https://github.com/ravi4j/auth-server.git]
